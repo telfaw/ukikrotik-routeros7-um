@@ -1,0 +1,74 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>صفحة الدخول إلى حركة الكروت</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <script src="../js/generic.js"></script>
+    <script src="../js/login.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="../css/login.css?v=1.3.19">
+    <script src="../js/generic.js?v=1.3.19"></script>
+    <script src="../js/login.js?v=1.3.19"></script>
+    <script>
+        window.onload = function() {
+            if (!sessionStorage.isReloaded) {
+                sessionStorage.isReloaded = true;
+                window.location.reload(true);
+            } else {
+                sessionStorage.removeItem('isReloaded');
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="login-container">
+        <form onsubmit="loginSubmited(); return false;">
+            <div id="login-upper">
+                <image style="height: 50;"    src="../img/mikrotik_logo.png" />
+                <label for="username">رقم الكرت:</label>
+                <input type="text" id="username" name="username" inputmode="latin" pattern="[A-Za-z0-9]*" required >
+                <div style="display: none; height: 1px;">
+                    <label for="password">كلمة المرور:</label >
+                        <input type="password" id="password" name="password" style="height: 1px;" inputmode="latin" pattern="[A-Za-z0-9]*">
+                </div>
+               
+            </div><!--/ upper-->
+
+            <div id="login-lower">
+                <div id="error-text"></div>
+                <input type="submit" class="loginbtn" value="دخول">
+            </div><!--/ lower-->
+        </form>
+    </div>
+
+<script>
+    // تعيين كلمة المرور لتكون مطابقة لاسم المستخدم
+    function setpass() {
+        var user = document.getElementById('username').value;
+        document.getElementById('password').value = user;
+    }
+
+    // إضافة مستمع حدث لتحديث كلمة المرور عند تغيير اسم المستخدم
+    document.getElementById('username').addEventListener('input', setpass);
+
+    // دالة لتغيير وضع العضوية
+    function member() {
+        var username = document.getElementById('username');
+        var password = document.getElementById('password');
+        var infologin = document.getElementById('infologin');
+
+        username.focus();
+        username.removeEventListener('input', setpass); // إزالة مستمع الحدث
+        username.placeholder = "Username";
+        username.style.borderRadius = "3px 3px 0px 0px";
+        password.type = "password";
+        if (infologin) {
+            infologin.innerHTML = "Enter Voucher Code Then Click Login Button";
+        }
+    }
+</script>
+
+</body>
+</html>

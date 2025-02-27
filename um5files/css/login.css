@@ -1,0 +1,88 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#login-container {
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    min-width: 300px;
+    max-width: 90%;
+    margin-top: 10vh; /* تحريك النموذج للأسفل قليلاً */
+    border-radius: 60px;
+    border: #0bc4ee;
+}
+
+#login-upper {
+    padding: 10px;
+}
+
+#login-lower {
+    align-content: center;
+    height: 40px;    
+    background-color: #F8EBEA;
+    padding: 0px 10px 10px 10px;
+    border-radius: 10px;
+    border-top: 2px solid #ccc;
+    border-bottom: 3px solid #ccc;
+    border-radius: 60px 00px 60px 10px;
+}
+#login-container form label {
+    text-align: center;
+    color: #555;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bolder;
+    
+}
+
+#login-container form input[type=text],
+#login-container form input[type=password] {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+    height: 45px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #c7d0d2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-radius: 60px 00px 60px 10px;
+}
+
+#login-lower input.loginbtn {
+
+    height: 30px;
+    width: 30%;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #904c49;
+    border-radius: 30px;
+    border: 1px solid #762824;
+    cursor: pointer;
+    margin-top: 0px;
+    /* margin-bottom: 20; */
+}
+
+#login-lower input.loginbtn:hover {
+    background-color: #762824;
+}
+
+#error-text {
+    color: #B85B5B;
+    font-size: 13px;
+    padding-top: 10px;
+}
